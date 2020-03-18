@@ -1,4 +1,4 @@
-Scratch commmit: 
+Scratch commmit: \n
     + create algorithm for this problem
     + doesn't pass all testcase()
     + doesn't have input from terminal
