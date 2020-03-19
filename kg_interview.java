@@ -19,20 +19,24 @@ public class kg_interview {
       Complexity O(n)
    **/
   public static boolean OneToOneMappable(String s1, String s2) {
-    // If s1.length is larger than s2.length.
-    // Then we cannot OneToOneMapable very character from s1 to s2 while still remain one-to-one
+    /* If s1.length is larger than s2.length.
+       Then we cannot OneToOneMapable very character from s1 to s2 while still remain one-to-one
+    */
     if (s1.length() > s2.length()) {
       return false;
     }
     int SIZE_OF_ASCII = 128;
-    // We make an assumption that the characters are in the standard ASCII code
-    // 128 characters in ASCII code
-    // This is essentially building the histogram of the characters in a string.
+    /* We make an assumption that the characters are in the standard ASCII code
+       128 characters in ASCII code
+       This is essentially building the histogram of the characters in a string.
+    */
     int[] countDub1 = new int[SIZE_OF_ASCII];
     int[] countDub2 = new int[SIZE_OF_ASCII];
     buildHistogram(countDub1,countDub2,s1,s2);
-    //
-    
+    /*The idea is that we use the largest occurrence of s1 and compare it with s2. 
+      If it is smaller then we use s2 largest occurrence to subtract s1 largest and then move them to the correct position. 
+      This repeat until s1 has no occurrence left.
+    */
     int temp = countDub1[SIZE_OF_ASCII - 1];
     while (temp > 0) {
         if (countDub1[SIZE_OF_ASCII - 1] > countDub2[SIZE_OF_ASCII - 1]) {
