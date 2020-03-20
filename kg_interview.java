@@ -51,7 +51,10 @@ public class kg_interview {
     }
     return true;
   }
-
+  /** We don't use Arrays.sort() because the array is already sorted.
+      inserstionSort() is used to bring the last postion of the array to the correct postion after making calculation
+       to maintain ascending order of the array.      
+  **/
   public static void inserstionSort(int[] arr) {
     int key = arr[arr.length - 1];
     int j = 126;
@@ -61,7 +64,7 @@ public class kg_interview {
     }
     arr[j + 1] = key;
   }
-
+  
   public static void buildHistogram(int[] countDub1, int[] countDub2,String s1, String s2){
     // Set 0 means the character hasn't appeared yet
     Arrays.fill(countDub1, 0);
